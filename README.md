@@ -27,8 +27,8 @@ $python3 git2txt.py /path/to/repo
 ## Example
 
 ```bash
-python3 src/git2txt.py ~/projects/gittxt
-# => writes ~/projects/my-repo/gittxt-my-repo-repo.txt
+python3 src/git2txt.py ~/projects/my-proj
+# => writes ~/projects//gittxt-my-proj-repo.txt
 ```
 
 ## Example Output
