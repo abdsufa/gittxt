@@ -4,7 +4,7 @@ Thank you for your interest in contributing to gittxt!
 
 ## Rules and Coding Conventions
 
-* Everything needed to run & understand the code lives in the repo, start from this `README.md` and the file/function doc-strings.
+* Everything needed to run & understand the code lives in the repo, start from `README.md` and the file/function doc-strings.
 * 4-space indentation, 87-character lines.
 * `snake_case` for functions/variables; `PascalCase` for classes, `UPPER_CASE` for `CONSTANTS`.
 * Be clear & Pythonic—pick self-explanatory names and comment only when ambiguity remains.

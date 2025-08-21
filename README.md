@@ -34,6 +34,33 @@ python3 src/git2txt.py ~/projects/gittxt
 ## Example Output
 
 ```bash
+Directory structure:
+└── gitingest/
+    ├── .docker/
+    │   └── setup.sh
+    ├── .dockerignore
+    ├── .env.example
+    ├── .gitignore
+    ├── CHANGELOG.md
+    ├── CODE_OF_CONDUCT.md
+    ├── compose.yml
+    ├── CONTRIBUTING.md
+    ├── LICENSE
+    ├── README.md
+    ├── SECURITY.md
+    ├── git2txt.py
+    ├── src/
+    │   ├── gittxt/
+    │   │   ├── __init__.py
+    │   │   ├── __main__.py
+    │   │   └── utils/
+    │   │       └── __init__.py
+    └── tests/
+        ├── .pylintrc
+        ├── __init__.py
+        ├── conftest.py
+        └── test_summary.py
+
 ================================================
 FILE: CHANGELOG.md
 ================================================
