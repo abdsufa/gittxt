@@ -21,3 +21,4 @@ Thank you for your interest in contributing to gittxt!
 
 * We use Semantic Versioning (`MAJOR.MINOR.PATCH`) and maintain a human-readable changelog in `CHANGELOG.md`.
 * For any release, the `CHANGELOG.md` must be updated and a commit must be made with a message like `release: vX.Y.Z`.
+*  Please Don’t dump git logs into changelogs.
