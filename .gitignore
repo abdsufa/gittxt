@@ -36,9 +36,11 @@ logs/
 *.tmp
 tmp/
 
+
 # Project-specific files
 history.txt
 digest.txt
+gittxt-gittxt-repo
 
 # Environment variables
 .env

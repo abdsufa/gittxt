@@ -1,0 +1,11 @@
+{
+  // Allows duplicate headings in changelogs (e.g., "### Changed") under different versions.
+  "MD024": {
+    "siblings_only": true
+  },
+  
+    // Set the line length to 87 characters.
+  "MD013": {
+    "line_length": 87
+  }
+}

@@ -1,6 +1,10 @@
 # gittxt
 
-Local, Simple, Privacy-first exporter that turns a repository into a single **digest text file** optimized for LLM ingestion.
+[![GitHub release (latest by date)][release-badge]][releases]
+[![Python Version][python-badge]][python-url]
+[![MIT License][license-badge]][license]
+
+Local, Simple, Privacy-first exporter that turns a repository into a single **digest text file** optimized for LLM Prompt.
 
 ## Usage
 
@@ -21,7 +25,7 @@ $python3 git2txt.py /path/to/repo
 - Prioritizes **README.md** then **CHANGELOG.md**.
 - Prints **token estimate** on completion.
 - No external deps required 
-    - optional: `tiktoken` for more accurate token counts -> $pip3 install tiktoken
+- optional: `tiktoken` for more accurate token counts -> $pip3 install tiktoken
 ```
 
 ## Example
@@ -101,3 +105,10 @@ Copyright (c) 2025 git2txt contributors
 <file content ... >
 
 ```
+
+[release-badge]: https://img.shields.io/github/v/release/USERNAME/gittxt
+[releases]: https://github.com/USERNAME/gittxt/releases/latest
+[license]: ./LICENSE
+[license-badge]: https://img.shields.io/badge/license-MIT-yellow.svg
+[python-badge]: https://img.shields.io/badge/python-3.6%2B-blue.svg
+[python-url]: https://www.python.org/

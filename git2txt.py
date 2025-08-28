@@ -9,6 +9,8 @@ from pathlib import Path
 from typing import Iterable, List, Dict, Optional
 import mimetypes
 
+__version__ = "0.3.0"
+
 PRIORITY_FILES = ["README.md", "CHANGELOG.md"]
 
 DEFAULT_IGNORE_DIRS = {
@@ -179,6 +181,12 @@ def main():
         type=int,
         default=1_000_000,
         help="Skip files larger than this (default 1MB).",
+    )
+    ap.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="show program's version number and exit",
     )
     args = ap.parse_args()
     root = Path(args.path).resolve()
