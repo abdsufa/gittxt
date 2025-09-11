@@ -30,7 +30,7 @@ DEFAULT_IGNORE_DIRS = {
     ".mypy_cache",
 }
 
-DEFAULT_IGNORE_FILES = {".DS_Store", "Thumbs.db"}
+DEFAULT_IGNORE_FILES = {".DS_Store", "Thumbs.db", ".gitignore"}
 
 
 def which(cmd: str) -> bool:
@@ -105,7 +105,7 @@ def filter_files(root: Path, rels: Iterable[str], max_bytes: int) -> List[Path]:
         if not is_probably_text(p):
             continue
         out.append(p)
-    return sorted(out, key=lambda p: p.as_posix().lower())
+    return out
 
 
 def build_tree(paths: List[Path], root: Path) -> str:
@@ -120,7 +120,8 @@ def build_tree(paths: List[Path], root: Path) -> str:
         insert(p.relative_to(root).parts)
 
     def render(node, prefix=""):
-        keys = sorted(node.keys(), key=str.lower)
+        # Sort keys with dotfiles last
+        keys = sorted(node.keys(), key=lambda k: (k.startswith("."), str.lower(k)))
         lines = []
         for i, k in enumerate(keys):
             last = i == len(keys) - 1
@@ -147,16 +148,22 @@ def estimate_tokens(text: str) -> int:
 
 
 def assemble_digest(root: Path, files: List[Path], encoding="utf-8") -> str:
-    tree = "Directory structure:\n" + build_tree(files, root) + "\n"
-    sections = [tree]
-
     def sort_key(p: Path):
-        name = p.name
-        if name in PRIORITY_FILES and p.parent == root:
-            return (0, PRIORITY_FILES.index(name))
-        return (1, p.as_posix().lower())
+        rel_path = p.relative_to(root)
+        depth = len(rel_path.parts)
+        is_dotfile = rel_path.name.startswith(".")
+        is_priority = p.name in PRIORITY_FILES and p.parent == root
+
+        if is_priority:
+            return (0, PRIORITY_FILES.index(p.name), depth, p.as_posix().lower())
+
+        return (1, is_dotfile, depth, p.as_posix().lower())
 
     files_sorted = sorted(files, key=sort_key)
+
+    tree = "Directory structure:\n" + build_tree(files_sorted, root) + "\n"
+    sections = [tree]
+
     for p in files_sorted:
         txt = load_text(p, encoding)
         if txt is None:
@@ -204,8 +211,13 @@ def main():
             rels = fallback_walk(root)
     except subprocess.CalledProcessError:
         rels = fallback_walk(root)
+
     files = filter_files(root, rels, args.max_bytes)
+    # Exclude the output file itself
     files = [p for p in files if p.name != output_filename]
+    # Exclude default ignored files
+    files = [p for p in files if p.name not in DEFAULT_IGNORE_FILES]
+
     digest = assemble_digest(root, files)
     output_path.write_text(digest, encoding="utf-8")
     tokens = estimate_tokens(digest)

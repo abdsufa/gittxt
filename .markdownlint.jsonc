@@ -4,7 +4,7 @@
     "siblings_only": true
   },
   
-    // Set the line length to 87 characters.
+  // Set the line length to 87 characters.
   "MD013": {
     "line_length": 87
   },

@@ -4,8 +4,8 @@ Thank you for your interest in contributing to gittxt!
 
 ## Rules and Coding Conventions
 
-* Everything needed to run & understand the code lives in the repo, start from `README.md`
-and the file/function doc-strings.
+* Everything needed to run & understand the code lives in the repo,
+start from `README.md` and the file/function doc-strings.
 * 4-space indentation, 87-character lines.
 * `snake_case` for functions/variables; `PascalCase` for classes, `UPPER_CASE` for `CONSTANTS`.
 * Be clear & Pythonic—pick self-explanatory names and comment only when ambiguity remains.
@@ -23,6 +23,6 @@ and the file/function doc-strings.
 
 * We use Semantic Versioning (`MAJOR.MINOR.PATCH`) and maintain a human-readable
 changelog in `CHANGELOG.md`.
-* For any release, the `CHANGELOG.md` must be updated and a commit must be made with 
-a message like `release: vX.Y.Z`.
+* For any release, the `CHANGELOG.md` must be updated and a commit must be made
+with a message like `release: vX.Y.Z`.
 * Please Don’t dump git logs into changelogs.
