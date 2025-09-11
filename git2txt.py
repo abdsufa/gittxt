@@ -9,9 +9,9 @@ from pathlib import Path
 from typing import Iterable, List, Dict, Optional
 import mimetypes
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
-PRIORITY_FILES = ["README.md", "CHANGELOG.md"]
+PRIORITY_FILES = ["README.md", "CHANGELOG.md", "CONTRIBUTING.md"]
 
 DEFAULT_IGNORE_DIRS = {
     ".git",
@@ -171,6 +171,7 @@ def assemble_digest(root: Path, files: List[Path], encoding="utf-8") -> str:
     return "\n".join(sections)
 
 
+# ── guard block ────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser(
         description="Export a repo into a single text digest for LLMs."

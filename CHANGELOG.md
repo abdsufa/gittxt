@@ -7,7 +7,15 @@
 
 ```SV 2.0.0 = MAJOR . MINOR . PATCH - Pre-Release(Alpha, Beta) + Build(Number)```
 
-## [0.3.0] - 2025-08-27
+## [0.4.0] - 11-Sep-2025
+
+### Planned
+
+- Ignore '.gitignore' by default.
+- output digest will sort files by level './x.md' will be before './src/y.md'.
+- *exception will be for files with '.' prefix, they should be last regardless their level.
+
+## [0.3.0] - 27-Aug-2025
 
 ### Changed
 
@@ -15,7 +23,7 @@
 - Add versions.
 - Add README badges.
 
-## [0.2.0] - 2025-08-19
+## [0.2.0] - 19-Aug-2025
 
 ### Changed
 

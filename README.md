@@ -20,7 +20,8 @@ $python3 git2txt.py /path/to/repo
 ## Highlights
 
 ```bash
-- Uses **`git ls-files`** for exact `.gitignore` fidelity (falls back to `os.walk` if not a Git repo).
+- Uses **`git ls-files`** for exact `.gitignore` fidelity (falls back to `os.walk` 
+if not a Git repo).
 - Skips binaries via **content sniffing** (not just by extension).
 - Dynamic output name: **`gittxt-<repo_name>-repo.txt`**.
 - Prioritizes **README.md** then **CHANGELOG.md**.
@@ -100,8 +101,6 @@ import mimetypes
 FILE: LICENSE
 ================================================
 # MIT License
-
-Copyright (c) 2025 git2txt contributors
 
 <file content ... >
 

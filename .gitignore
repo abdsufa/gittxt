@@ -28,7 +28,10 @@ build/
 dist/
 *.wheel
 
-
+# Project-Exporting files 
+history.txt
+digest.txt
+gittxt-*
 
 # Logs & runtime output
 *.log

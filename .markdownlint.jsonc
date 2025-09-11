@@ -7,5 +7,8 @@
     // Set the line length to 87 characters.
   "MD013": {
     "line_length": 87
-  }
+  },
+  
+  // Allow unused link reference definitions to be used as comments.
+  "MD053": false
 }
